@@ -1,4 +1,4 @@
-package metrics.healthchecks.process;
+package metrics;
 
 import com.codahale.metrics.Metric;
 import com.codahale.metrics.MetricSet;

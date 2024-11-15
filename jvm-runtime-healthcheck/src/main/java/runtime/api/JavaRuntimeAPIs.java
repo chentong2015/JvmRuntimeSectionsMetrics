@@ -1,4 +1,4 @@
-package JavaRuntimeAPI;
+package runtime.api;
 
 import java.util.Scanner;
 
@@ -9,9 +9,8 @@ import java.util.Scanner;
 // - 为程序设置shutdown hook    Runtime.getRuntime().addShutdownHook()
 public class JavaRuntimeAPIs {
 
-    // TODO. JVM可用处理器数可以用于判断并发的线程数量, 以最大限度完成并发操作
-    // 返回processors处理器数量(Logical threads逻辑线程数量, 可能包含hyper-threading超线程)
-    // 返回的结果不会考虑系统的physical cores物理核心数
+    // TODO. 处理器数量决定JVM最大的并发Threads线程数量
+    // 通过Runtime API在运行时获取processors处理器数量(Logical threads, 可能包含hyper-threading)
     private static void testJvmProcessor() {
         int cores = Runtime.getRuntime().availableProcessors();
         // Split work to threads based on number of processors
