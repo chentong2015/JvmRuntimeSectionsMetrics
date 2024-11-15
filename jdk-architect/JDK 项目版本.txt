@@ -1,6 +1,4 @@
-Oracle JDK:
-
-OpenJDK:
+Oracle JDK vs OpenJDK:
 https://openjdk.org/
 https://openjdk.org/projects/jdk/21/ 查找对应版本的新特性
 https://openjdk.org/projects/code-tools/ OpenJDK工具库
