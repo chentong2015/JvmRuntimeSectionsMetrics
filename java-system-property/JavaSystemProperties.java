@@ -1,29 +1,25 @@
-import java.net.URL;
+import java.nio.charset.Charset;
 
 public class JavaSystemProperties {
 
-    public static void main(String[] args) {
-        System.out.println(System.getProperty("file.encoding"));
-        System.out.println(System.getProperty("java.version"));
+    // TODO. 自定义配置VM虚拟机系统属性和值, 支持参数序列
+    // Edit Configuration > VM Options > -Dproperty1=test -Dproperty2="chen"
+    private static void testCustomProperties() {
+        System.out.println(System.getProperty("property1"));
+        System.out.println(System.getProperty("property2"));
 
-        // TODO. 返回包含class的所有路径
+        // -Dfile.encoding="UTF-8" 特殊的VM参数属性
+        // 可以设置到OS系统的环境变量，在程序执行时自动判断
+        if (Charset.defaultCharset().toString().equals("UTF-8")) {
+            System.out.println("Set encoding UTF-8");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("file.encoding")); // UTF-8
+        System.out.println(System.getProperty("java.version")); // 17.0.10
+
         // Path used to find directories and JAR archives containing class files.
         System.out.println(System.getProperty("java.class.path"));
-
-        // TODO. 返回class被加载的完整路径
-        // file:work_folder/target/JavaMasterClass/runtime/VMOptionSystemProperties.class
-        URL url = JavaSystemProperties.class.getClassLoader()
-                .getResource("JavaRuntimeAPI/VMOptionSystemProperties.class");
-        System.out.println(url);
-
-        // TODO. 返回class被加载的根目录位置, 如果从jar中加载则会加上压缩文件路径
-        // work_folder/target/JavaMasterClass/
-        // work_folder/target/JavaMasterClass/file:...Demo.jar
-        String filePath = JavaSystemProperties.class
-                .getProtectionDomain()
-                .getCodeSource()
-                .getLocation()
-                .getPath();
-        System.out.println(filePath);
     }
 }
