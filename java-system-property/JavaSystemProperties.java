@@ -1,5 +1,11 @@
 import java.nio.charset.Charset;
 
+// Java程序访问(调用)系统环境的属性配置
+// Java程序可能受到系统环境变量的影响(交互作用)
+//
+// 通过系统变量全局参数的配置, 解耦程序运行时的参数
+// - 获取自定义属性设置
+// - 获取系统定义的配置属性
 public class JavaSystemProperties {
 
     // TODO. 自定义配置VM虚拟机系统属性和值, 支持参数序列
