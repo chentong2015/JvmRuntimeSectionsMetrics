@@ -1,6 +1,6 @@
-package classloader_system;
+package java_classloader;
 
-import classloader_system.classloader.CustomClassLoader;
+import java_classloader.classloader.CustomClassLoader;
 
 // TODO. "类装载子系统"加载类的三个主要过程
 // Loading -> Linking -> Initialization

@@ -1,4 +1,4 @@
-package jvm_memory_outside;
+package runtime_memory_outside;
 
 import java.nio.ByteBuffer;
 

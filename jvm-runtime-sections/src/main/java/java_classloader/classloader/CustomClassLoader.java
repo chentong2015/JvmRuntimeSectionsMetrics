@@ -1,4 +1,4 @@
-package classloader_system.classloader;
+package java_classloader.classloader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
