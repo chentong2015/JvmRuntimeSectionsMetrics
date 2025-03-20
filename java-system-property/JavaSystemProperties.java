@@ -22,8 +22,11 @@ public class JavaSystemProperties {
     }
 
     public static void main(String[] args) {
-        System.out.println(System.getProperty("file.encoding")); // UTF-8
-        System.out.println(System.getProperty("java.version")); // 17.0.10
+        // User working directory
+        System.out.println(System.getProperty("user.dir"));
+        System.out.println(System.getProperty("file.encoding"));
+
+        System.out.println(System.getProperty("java.version"));
 
         // Path used to find directories and JAR archives containing class files.
         System.out.println(System.getProperty("java.class.path"));
