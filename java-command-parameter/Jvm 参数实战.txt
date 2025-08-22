@@ -1,0 +1,31 @@
+TODO. JVM参数设置必须在-jar之前
+>java -jar -Xmx1G service.jar (普通参数设置，堆内存没有改变)
+>java -Xmx1G -jar service.jar (正确的最大堆参数设置)
+>java -Xms1G -Xmx1G -jar service.jar (固定初始堆大小，避免扩容)
+
+验证: 正确设置后Heap大小为5G, 反之为系统内存25%
+$ java -Xmx5G -XX:+PrintFlagsFinal -version | grep MaxHeapSize
+   size_t MaxHeapSize             = 5368709120                                {product} {command line}
+   size_t SoftMaxHeapSize         = 5368709120                             {manageable} {ergonomic}
+$ java -XX:+PrintFlagsFinal -version -Xmx5G | grep MaxHeapSize
+   size_t MaxHeapSize             = 8480882688                                {product} {ergonomic}
+   size_t SoftMaxHeapSize         = 8480882688                             {manageable} {ergonomic}
+
+TODO. 多次设置同一个参数时，JVM以最右侧设置为准(验证Heap的设置)
+OpenJDK 1.7 also seems to take the rightmost value, at least for -Xms.
+1. 通过终端来验证
+   > java -Xmx1G -XX:+PrintFlagsFinal 2>/dev/null | grep MaxHeapSize
+         size_t MaxHeapSize               = 1073741824  1G
+   > java -Xmx1G -XX:+PrintFlagsFinal -Xmx2G 2>/dev/null | grep MaxHeapSize
+         size_t MaxHeapSize               = 2147483648  2G
+2. 通过程序来验证: 分配特定内存空间，测试大对象(无法被GC的对象)的存储
+   > java -Xms128m -Xmx256m -Xmx2g
+
+TODO. JVM -Xmx参数限制: 无法在Runtime运行时自动扩容或动态修改
+Current issue: it is not possible to increase the size of Java heap at runtime_memory_outside.
+The only one way to increase the Heap size is to restart the JVM with a new -Xmx parameter.
+1. 如果重启JVM会导致停机中断的代价
+2. 如果设置较大的最大Heap堆内存可能导致资源的浪费
+
+Dynamic Max Memory Limit
+https://openjdk.org/jeps/8204088
