@@ -1,3 +1,5 @@
+TODO. 可以通过JDK TOOL来动态地获取JVM运行时的信息，返回应用的状态
+
 Metrics HealthCheck
 用于检测系统是否处于健康的状态, 符合production发布的要求
 能够在项目正式运转和发布之前发现问题

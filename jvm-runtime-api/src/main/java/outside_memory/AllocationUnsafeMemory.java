@@ -1,4 +1,4 @@
-package runtime_memory_outside;
+package outside_memory;
 
 import sun.misc.Unsafe;
 
