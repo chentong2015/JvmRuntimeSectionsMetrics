@@ -1,0 +1,6 @@
+agentlib: 用于加载本地原生的agent库
+-agentlib:hprof 用于获取jvm的运行情况和数据
+-agentlib:jdwp  Java Debug Wire Protocol用于远程Debug
+
+先启动远程Server上的java应用, 然后启动本地项目远程监听Debug
+> java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -jar application.jar
