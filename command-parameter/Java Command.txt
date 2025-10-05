@@ -18,11 +18,3 @@ https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html
   > app.log 把标准输出写到 app.log
   2>&1 把标准错误也重定向到标准输出(app.log)
   & 把进程放到后台运行, 避免因为终端关闭而终止
-
-TODO. Java应用启动配置(Jvm Parameter + System Property)
--Xms2048m -Xmx8096m -XX:MaxMetaspaceSize=512m
---add-opens java.base/java.lang=ALL-UNNAMED
---add-opens java.base/java.time=ALL-UNNAMED
---add-exports=java.base/com.sun.crypto.provider=ALL-UNNAMED
--Dfile.encoding=UTF-8
--Dkeystore.path=**/keystore/root/ca/**universal.keystore.p12
