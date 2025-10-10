@@ -1,10 +1,9 @@
-TODO. Java Command命令全集: 支持运行时参数配置
-https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html
+> javac HelloWorld.java 编辑源代码，生成HelloWorld.class中间代码
+> java HelloWorld 运行程序生成的.class文件
 
-> javac HelloWorld.java    编辑源代码，生成HelloWorld.class中间代码
-> java HelloWorld          运行程序生成的.class文件
 > java -jar HelloWorld.jar 运行项目打包的jar包
-> java -jar project.war    运行项目打包的war包
+> java -jar HelloWorld.war 运行项目打包的war包
+> java -jar "C:\Users\xx\HelloWorld.jar" 使用全路径运行jar包
 
 > java -cp my-project.jar com.my_package.MyClass 运行jar包中指定启动类
 > java -cp my-project.jar;dependency-jars/* com.example.MyClass
@@ -18,3 +17,6 @@ https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html
   > app.log 把标准输出写到 app.log
   2>&1 把标准错误也重定向到标准输出(app.log)
   & 把进程放到后台运行, 避免因为终端关闭而终止
+
+TODO. Java Command命令全集: 支持运行时参数配置
+https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html
