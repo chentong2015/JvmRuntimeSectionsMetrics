@@ -1,4 +1,4 @@
-package java_gc;
+package java_gc_algo;
 
 import java.util.HashMap;
 import java.util.Map;

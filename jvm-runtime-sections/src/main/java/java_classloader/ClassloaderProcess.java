@@ -1,7 +1,5 @@
 package java_classloader;
 
-import java_classloader.classloader.CustomClassLoader;
-
 // TODO. "类装载子系统"加载类的三个主要过程
 // Loading -> Linking -> Initialization
 public class ClassloaderProcess {
@@ -9,14 +7,14 @@ public class ClassloaderProcess {
     // 1. Loading ==> 类加载器
     // (通过特殊的名称找二进制表示形式的class或者interface .class file)，获取定义的二进制字节流
     public void testClassLoader() throws Exception {
-        CustomClassLoader myClassLoader = new CustomClassLoader();
+        CustomClassloader myClassLoader = new CustomClassloader();
         // 加载同一路径下面的(同一个)Class文件
         String classPath = "jvm_basics.chapter07_Jvm_ClassLoader.classloader.MyClassLoader";
         Object obj = myClassLoader.loadClass(classPath).newInstance();
         System.out.println(obj.getClass());
         // instanceof 判定对象所属类型关系: false
         // JVM中存在两个MyClassLoader类，一个是由JVM应用程序类加载器所加载的，另一个是由自定义的类加载器所加载 !!
-        System.out.println(obj instanceof CustomClassLoader);
+        System.out.println(obj instanceof CustomClassloader);
     }
 
     // 2. Linking

@@ -1,4 +1,4 @@
-package runtime_memory_data.object.object_layout;
+package runtime_memory.object.object_layout;
 
 // import org.openjdk.jol.info.ClassLayout;
 // import org.openjdk.jol.vm.VM;

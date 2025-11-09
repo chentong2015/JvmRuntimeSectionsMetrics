@@ -1,0 +1,10 @@
+TODO. JIT(后段编译)将.class文件转换成二进制机器码执行
+
+Error: java.lang.UnsupportedClassVersionError: xx/example/DBConversion
+It has been compiled by a more recent version of the Java Runtime (class file version 61.0),
+this version of the Java Runtime only recognizes class file versions up to 55.0
+
+Jenkins requires Java versions [8, 11] but you are running with Java 17 from C:\jdk-17.0.2
+java.lang.UnsupportedClassVersionError: 61.0
+  at Main.verifyJavaVersion(Main.java:130)
+  at Main.main(Main.java:99)
