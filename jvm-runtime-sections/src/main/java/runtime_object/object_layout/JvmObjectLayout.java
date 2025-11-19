@@ -3,6 +3,8 @@ package runtime_object.object_layout;
 // import org.openjdk.jol.info.ClassLayout;
 // import org.openjdk.jol.vm.VM;
 
+// TODO. 对象在内存中的存储格式和布局
+// https://github.com/openjdk/jol
 public class JvmObjectLayout {
 
     public static void main(String[] args) {
