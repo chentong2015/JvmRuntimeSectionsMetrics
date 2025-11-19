@@ -1,10 +1,8 @@
-package runtime_memory.object.object_layout;
+package runtime_object.object_layout;
 
 // import org.openjdk.jol.info.ClassLayout;
 // import org.openjdk.jol.vm.VM;
 
-// 打印对象内存的存储格式, 分析对象在JVM中的布局
-// https://github.com/openjdk/jol
 public class JvmObjectLayout {
 
     public static void main(String[] args) {
